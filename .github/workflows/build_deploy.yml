@@ -28,3 +28,7 @@ jobs:
           restore-keys: |
             ${{runner.os}}-composer-
 
+
+      - name: Composer Install
+        run: |
+          composer install
