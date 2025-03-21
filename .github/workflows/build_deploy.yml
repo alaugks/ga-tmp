@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
 jobs:
   build_deploy:
-    environment: ${{inputs.environment}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,7 +23,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ${{steps.composer-cache.outputs.dir}}
-          key: ${{runner.os}}-composer-${{hashFiles('**/composer.lock')}}
+          key: ${{runner.os}}-composer-${{hashFiles('**/foo/composer.lock')}}
           restore-keys: |
             ${{runner.os}}-composer-
 
