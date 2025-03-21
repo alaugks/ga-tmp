@@ -16,6 +16,10 @@ jobs:
           php-version: '8.2'
           tools: composer:v2
 
+      - name: Composer Install
+        run: |
+          composer install
+
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
@@ -30,6 +34,3 @@ jobs:
             ${{runner.os}}-composer-
 
 
-      - name: Composer Install
-        run: |
-          composer install
